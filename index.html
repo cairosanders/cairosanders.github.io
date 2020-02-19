@@ -1,7 +1,368 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
 
+body {
+  background-image: url("images/lemons.jpg");
+  background-attachment: fixed;
+  }
+p {font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif }
+
+h1 {text-align: center;}
+
+#heading {
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  height: auto;
+}
+
+.boxed1 {
+  display: inline-block;
+  background-color: rgb(255, 248, 220, 0.8);
+  padding-right: 70px;
+  padding-left: 70px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 400px;
+  margin-right: 70px;
+  color: black;
+}
+
+/*navigation bar*/
+
+#navbar {
+  overflow: hidden;
+  background-color: rgba(34, 139, 34, 0.6);
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 55px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: rgba(34, 139, 34);
+  color: yellow;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/*image polaroid effect*/
+div.polaroid {
+  position: absolute;
+  display: inline-block;
+  width: 300px;
+  height: 475px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 50px;
+  margin-bottom: 25px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+div.container {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 10px;
+  width: 300px;
+}
+
+/*image slide show*/
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 700px;
+  position: relative;
+  margin: auto;
+  margin-top: 100px;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*image hover effect*/
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+</style>
+</head>
 <body>
-  Hello world, my name is cairo.
+
+  <div id="navbar">
+    <a href="javascript:void(0)"><a href="https://www.linkedin.com/in/cairo-sanders-031860ba?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BNxbP%2B%2BXqStSDiSdTv0BNuA%3D%3D">LinkedIn</a></a>
+    <a href="javascript:void(0)"><a href="https://github.com/cairosanders">GitHub</a></a>
+    <a href="javascript:void(0)"><a href="mailto:cairosanders@hotmail.com?" target="_top">Email</a></a>
+    <a href="javascript:void(0)"><a href="https://drive.google.com/file/d/1d5iQ1bvL-OP6ujNe5J19jRNElca3-SFN/view?usp=sharing">Resume</a></a>
+  </div>
+
+  <img id = "heading" src="images/CairoSanders.png" alt="cairosanders" class="center">
+
+  <div class="polaroid">
+    <img src="images/headshot.jpg" alt="Cairo" width="300" height="400">
+    <div class="container">
+    <p>Cairo with Star</p>
+    </div>
+  </div>
+
+  <div class = "boxed1">
+    <h1>About</h1>
+    <p>Cairo is a 4th year computer science and psychology combined major at the University of Victoria. She has done 2 co-ops. Her first was
+    with For the Love of the Game, an online training resource for coaches. With For the Love of the Game, Cairo worked on social media management
+    and marketing, UI design and implementation, improving technical SEO, corespnding with stakeholderser, and editing videos and podcasts. header
+    second co-op was with Science Venture. An organization which aims to make science fun for kids. During her first 2 months with Science Venture
+    Cairo traveled to schools all over the lower island to deliver fu science related curriculum to kids. During the summer months, Cairo led a
+    coding camp for kids age 10-14 with her camp partner, Jacob. After the co-op ended she spent the fall semester teaching an all girls coding club
+    called Friyay. She is currently looking for her 3rd co-op and hopes to find a position in which she can be more involved in software development.
+
+    <br><br>
+
+    Outside of coding Cairo loves reading, art and dancing. You can see some of her artwork below. Some of her notable acomplishments in these
+    fields were participating in advanced dance in high school; displaying her artwork at the victoria art gallery, and being the winner of the
+     interdiscpilnary fine arts award from her graduating class at Spectrum Cumminity High School.
+
+    <br><br>
+
+    Cairo Currently works at a Kinder Cup cafe on the weekend. She has always worked while in school and finds that doing so has helped her excell
+    in time management.
+
+    <br><br><br>
+    </p>
+  </div>
+
+    <h1 style="color:#228b22"> Most Recent Projects</h1>
+
+  <div class="row">
+    <div class="column">
+      <img src="images/plantoneonme.png" alt="Snow" style="width:100%">
+    </div>
+    <div class="column">
+      <img src="images/battlesnake.png" alt="Forest" style="width:100%">
+    </div>
+    <div class="column">
+      <img src="images/templog.png" alt="Mountains" style="width:100%">
+    </div>
+  </div>
+
+  <div class="slideshow-container" >
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="images/rg.jpg" style="width: 700px">
+  <div class="text">Cairo Competing in rhythmmic gymnastics in Seatle, Washington</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="images/timandser.jpg" style="width: 700px">
+  <div class="text">Art project in progress</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="images/dragon.jpg" style="width: 700px">
+  <div class="text">Dragon from Christmas present for brother</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+
+  <script>
+    window.onscroll = function() {navBar()};
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function navBar() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+
+    var slideIndex = 1;
+
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+
 </body>
 </html>
